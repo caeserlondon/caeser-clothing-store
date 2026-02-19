@@ -22,7 +22,6 @@ export default async function AdminLayout({
 								width={48}
 								height={48}
 								alt={`${site.name} logo`}
-								style={{ width: 'auto', height: 'auto' }}
 							/>
 						</Link>
 						<AdminNav className='mx-6 hidden md:flex' />

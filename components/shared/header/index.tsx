@@ -26,7 +26,6 @@ export default async function Header() {
 								width={48}
 								height={48}
 								alt={`${site.name} logo`}
-								style={{ width: 'auto', height: 'auto' }}
 								className='my-1 mx-3'
 							/>
 							<span className='font-libre-baskerville italic'>

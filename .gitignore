@@ -2,8 +2,16 @@
 
 # dependencies
 /node_modules
+node_modules/
 /.pnp
 .pnp.*
+.pnpm-store
+.pnpm-store/
+.pnpm-debug.log*
+
+pnpm-debug.log
+pnpm-lock.yaml
+
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
@@ -16,6 +24,10 @@
 # next.js
 /.next/
 /out/
+.next/
+out/
+dist/
+
 
 # production
 /build
