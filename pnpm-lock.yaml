@@ -180,7 +180,7 @@ importers:
         specifier: ^2.4.6
         version: 2.4.6
       '@types/node':
-        specifier: ^20
+        specifier: ^20.19.33
         version: 20.19.33
       '@types/react':
         specifier: ^19
