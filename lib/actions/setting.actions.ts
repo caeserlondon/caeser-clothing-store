@@ -1,6 +1,6 @@
 'use server'
 import { ISettingInput } from '@/types'
-import data from '../data'
+import { defaultSetting } from '../fallback-data'
 import Setting from '../db/models/setting.model'
 import { connectToDatabase } from '../db'
 import { formatError } from '../utils'
@@ -22,7 +22,7 @@ export const getSetting = async (): Promise<ISettingInput> => {
     const setting = await Setting.findOne().lean()
     globalForSettings.cachedSettings = setting
       ? JSON.parse(JSON.stringify(setting))
-      : data.settings[0]
+      : defaultSetting
   }
   return globalForSettings.cachedSettings as ISettingInput
 }
