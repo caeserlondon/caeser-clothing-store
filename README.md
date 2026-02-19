@@ -2,6 +2,10 @@
 
 A full-featured e-commerce platform built with Next.js 15 and MongoDB, inspired by Amazon's shopping experience. Browse products, manage inventory, process payments, and keep customers informed—all in one modern web application.
 
+| Store | Admin |
+| :---: | :---: |
+| ![Store screen](assets/store-screen.png) | ![Admin screen](assets/admin-screen.png) |
+
 ## Features
 
 ### Shopping Experience
