@@ -1,0 +1,15 @@
+
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Block low-value or sensitive pages (Standard for eCommerce)
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /search/
+Disallow: /admin/
+
+# Point bots to Sitemap
+Sitemap: https://caeser-store.vercel.app
