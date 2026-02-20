@@ -50,7 +50,7 @@ export const updateSetting = async (newSetting: ISettingInput) => {
 export const setCurrencyOnServer = async (newCurrency: string) => {
   'use server'
   const cookiesStore = await cookies()
-  cookiesStore.set('currency', newCurrency)
+  cookiesStore.set('currency', newCurrency, { path: '/' })
 
   return {
     success: true,

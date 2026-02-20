@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { getFilterUrl } from '@/lib/utils'
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/i18n/routing'
 import React from 'react'
 
 export default function ProductSortSelector({

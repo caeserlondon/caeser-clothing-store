@@ -1,7 +1,6 @@
 'use client'
 import { ChevronUp } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useCallback } from 'react'
 import { useRouter as useNextRouter } from 'next/navigation'
 
@@ -10,7 +9,7 @@ import useSettingStore from '@/hooks/use-setting-store'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select'
 
 import { i18n } from '@/i18n-config'
-import { usePathname, useRouter, getPathname } from '@/i18n/routing'
+import { Link, usePathname, useRouter, getPathname } from '@/i18n/routing'
 import { SelectValue } from '@radix-ui/react-select'
 import { useLocale, useTranslations } from 'next-intl'
 

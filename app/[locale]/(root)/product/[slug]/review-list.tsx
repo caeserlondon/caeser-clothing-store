@@ -1,7 +1,8 @@
 'use client'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Calendar, Check, StarIcon, User } from 'lucide-react'
-import Link from 'next/link'
+import { Link, getPathname } from '@/i18n/routing'
+import { useLocale } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useInView } from 'react-intersection-observer'
@@ -68,6 +69,11 @@ export default function ReviewList({
   product: IProduct
 }) {
   const t = useTranslations('Product')
+  const locale = useLocale()
+  const signInCallbackUrl = getPathname({
+    locale,
+    href: `/product/${product.slug}`,
+  })
   const [page, setPage] = useState(2)
   const [totalPages, setTotalPages] = useState(0)
   const [reviews, setReviews] = useState<IReviewDetails[]>([])
@@ -287,7 +293,7 @@ export default function ReviewList({
               <div>
                 {t('Please')}{' '}
                 <Link
-                  href={`/sign-in?callbackUrl=/product/${product.slug}`}
+                  href={`/sign-in?callbackUrl=${encodeURIComponent(signInCallbackUrl)}`}
                   className='highlight-link'
                 >
                   {t('sign in')}
