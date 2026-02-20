@@ -2,8 +2,10 @@
 
 A full-featured e-commerce platform built with Next.js 15 and MongoDB, inspired by Amazon's shopping experience. Browse products, manage inventory, process payments, and keep customers informed—all in one modern web application.
 
-| Store | Admin |
-| :---: | :---: |
+**Live:** [caeser-store.vercel.app](https://caeser-store.vercel.app/)
+
+|                  Store                   |                  Admin                   |
+| :--------------------------------------: | :--------------------------------------: |
 | ![Store screen](assets/store-screen.png) | ![Admin screen](assets/admin-screen.png) |
 
 ## Features
@@ -21,6 +23,11 @@ A full-featured e-commerce platform built with Next.js 15 and MongoDB, inspired 
 - **Stripe** — Credit and debit card payments with secure checkout
 - **PayPal** — One-click PayPal checkout
 - **Cash on Delivery** — Pay when your order arrives
+
+### Internationalization
+
+- **Multi-language** — English (en-GB), Arabic (ar), and French (fr) with RTL support
+- **Multi-currency** — GBP, USD, EUR, AED with configurable conversion rates
 
 ### Inventory & Stock
 
@@ -42,11 +49,6 @@ A full-featured e-commerce platform built with Next.js 15 and MongoDB, inspired 
 - **Settings** — Configure site info, carousels, languages, currencies, payment methods, and delivery options
 - **Analytics** — Sales overview with charts (Recharts)
 - **Web pages** — Manage About, Contact, and Help content
-
-### Internationalization
-
-- **Multi-language** — English (en-GB), Arabic (ar), and French (fr) with RTL support
-- **Multi-currency** — GBP, USD, EUR, AED with configurable conversion rates
 
 ### Authentication
 

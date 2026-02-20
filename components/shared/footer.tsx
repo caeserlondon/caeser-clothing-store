@@ -2,26 +2,35 @@
 import { ChevronUp } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useCallback } from 'react'
+import { useRouter as useNextRouter } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import useSettingStore from '@/hooks/use-setting-store'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select'
 
 import { i18n } from '@/i18n-config'
-import { usePathname, useRouter } from '@/i18n/routing'
+import { usePathname, useRouter, getPathname } from '@/i18n/routing'
 import { SelectValue } from '@radix-ui/react-select'
 import { useLocale, useTranslations } from 'next-intl'
 
 export default function Footer() {
 	const router = useRouter()
+	const nextRouter = useNextRouter()
 	const pathname = usePathname()
+	const locale = useLocale()
+	const prefetchLocales = useCallback(() => {
+		i18n.locales.forEach(({ code }) => {
+			if (code !== locale) {
+				nextRouter.prefetch(getPathname({ locale: code, href: pathname }))
+			}
+		})
+	}, [locale, pathname, nextRouter])
 	const {
 		setting: { site, availableCurrencies, currency },
 		setCurrency,
 	} = useSettingStore()
 	const { locales } = i18n
-
-	const locale = useLocale()
 	const t = useTranslations()
 	return (
 		<footer className='bg-black  text-white underline-link'>
@@ -106,6 +115,7 @@ export default function Footer() {
 							/>{' '}
 							<Select
 								value={locale}
+								onOpenChange={(open) => open && prefetchLocales()}
 								onValueChange={(value) => {
 									router.push(pathname, { locale: value })
 								}}

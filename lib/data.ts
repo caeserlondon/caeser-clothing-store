@@ -2427,7 +2427,7 @@ We also provide helpful resources such as order tracking, product guides, and FA
 			title: 'Elevate Your Style with Exquisite Cufflinks',
 			buttonCaption: 'See More',
 			image: '/images/banner2.jpg',
-			url: 'http://localhost:3000/search?q=all&category=Cufflinks&tag=all&price=all&rating=all&sort=best-selling&page=1',
+			url: '/search?q=all&category=Cufflinks&tag=all&price=all&rating=all&sort=best-selling&page=1',
 			isPublished: true,
 		},
 		{
@@ -2435,7 +2435,7 @@ We also provide helpful resources such as order tracking, product guides, and FA
 			title: 'Explore the Finest Collection of Wrist Watches',
 			buttonCaption: 'See More',
 			image: '/images/banner3.jpg',
-			url: 'http://localhost:3000/search?q=all&category=Wrist+Watches&tag=all&price=all&rating=all&sort=best-selling&page=1',
+			url: '/search?q=all&category=Wrist+Watches&tag=all&price=all&rating=all&sort=best-selling&page=1',
 			isPublished: true,
 		},
 	],
@@ -2476,14 +2476,14 @@ We also provide helpful resources such as order tracking, product guides, and FA
 					title: 'Elevate Your Style with Exquisite Cufflinks',
 					buttonCaption: 'See More',
 					image: '/images/banner2.jpg',
-					url: 'http://localhost:3000/search?q=all&category=Cufflinks&tag=all&price=all&rating=all&sort=best-selling&page=1',
+					url: '/search?q=all&category=Cufflinks&tag=all&price=all&rating=all&sort=best-selling&page=1',
 				},
 				{
 					// !3 carousel - Wrist Watches
 					title: 'Explore the Finest Collection of Wrist Watches',
 					buttonCaption: 'See More',
 					image: '/images/banner3.jpg',
-					url: 'http://localhost:3000/search?q=all&category=Wrist+Watches&tag=all&price=all&rating=all&sort=best-selling&page=1',
+					url: '/search?q=all&category=Wrist+Watches&tag=all&price=all&rating=all&sort=best-selling&page=1',
 				},
 			],
 			availableLanguages: i18n.locales.map((locale) => ({

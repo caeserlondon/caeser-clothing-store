@@ -99,7 +99,6 @@ export default function AddToCart({
         {t('Product.Add to Cart')}
       </Button>
       <Button
-        variant='secondary'
         onClick={() => {
           try {
             addItem(item, quantity)
@@ -111,7 +110,7 @@ export default function AddToCart({
             })
           }
         }}
-        className='w-full rounded-full '
+        className='w-full rounded-full bg-[#ffa41c] text-black hover:bg-[#ffb43d] shadow-sm'
       >
         {t('Product.Buy Now')}
       </Button>

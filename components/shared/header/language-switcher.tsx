@@ -12,7 +12,8 @@ import {
 } from '@/components/ui/dropdown-menu'
 
 import { useLocale } from 'next-intl'
-import { Link, usePathname } from '@/i18n/routing'
+import { useRouter } from 'next/navigation'
+import { Link, usePathname, getPathname } from '@/i18n/routing'
 import useSettingStore from '@/hooks/use-setting-store'
 import { i18n } from '@/i18n-config'
 import { setCurrencyOnServer } from '@/lib/actions/setting.actions'
@@ -22,6 +23,16 @@ export default function LanguageSwitcher() {
   const { locales } = i18n
   const locale = useLocale()
   const pathname = usePathname()
+  const router = useRouter()
+
+  const prefetchLocales = React.useCallback(() => {
+    locales.forEach(({ code }) => {
+      if (code !== locale) {
+        const href = getPathname({ locale: code, href: pathname })
+        router.prefetch(href)
+      }
+    })
+  }, [locales, locale, pathname, router])
 
   const {
     setting: { availableCurrencies, currency },
@@ -32,7 +43,7 @@ export default function LanguageSwitcher() {
     setCurrency(newCurrency)
   }
   return (
-    <DropdownMenu>
+    <DropdownMenu onOpenChange={(open) => open && prefetchLocales()}>
       <DropdownMenuTrigger className='header-button h-[41px]'>
         <div className='flex items-center gap-1'>
           <span className='text-xl'>
