@@ -1108,7 +1108,7 @@ const products: IProductInput[] = [
 		],
 		tags: ['best-seller', 'todays-deal'],
 		isPublished: true,
-		price: 12000.0,
+		price: 8999.99,
 		listPrice: 15500.0,
 		avgRating: 3.46,
 		numReviews: 13,
