@@ -5,9 +5,26 @@ import { toSlug } from './utils'
 
 const users: IUserInput[] = [
 	{
-		name: 'John',
+		name: 'Test Admin',
 		email: 'admin@example.com',
-		password: bcrypt.hashSync('123456', 5),
+		password: bcrypt.hashSync('Admin@1234', 5),
+		role: 'Admin',
+		address: {
+			fullName: 'John Doe',
+			street: '111 Main St',
+			city: 'New York',
+			province: 'NY',
+			postalCode: '10001',
+			country: 'USA',
+			phone: '123-456-7890',
+		},
+		paymentMethod: 'Stripe',
+		emailVerified: false,
+	},
+	{
+		name: 'Test User',
+		email: 'user@example.com',
+		password: bcrypt.hashSync('User@1234', 5),
 		role: 'Admin',
 		address: {
 			fullName: 'John Doe',

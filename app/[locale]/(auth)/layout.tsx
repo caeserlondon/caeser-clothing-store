@@ -13,17 +13,16 @@ export default async function AuthLayout({
 		<div className='flex flex-col items-center min-h-screen highlight-link  '>
 			<header className='mt-8'>
 				<Link href='/'>
-					<Image
-						src='/icons/logo.png'
-						alt='logo'
-						width={120}
-						height={120}
-						priority
-						style={{
-							maxWidth: 'auto',
-							height: 'auto',
-						}}
-					/>
+					<div className='relative h-[120px] w-[120px] shrink-0'>
+						<Image
+							src='/icons/logo.png'
+							alt='logo'
+							fill
+							priority
+							className='object-contain'
+							sizes='120px'
+						/>
+					</div>
 				</Link>
 			</header>
 			<main className='mx-auto max-w-sm min-w-80 p-4'>{children}</main>

@@ -120,18 +120,26 @@ export async function getAllProductsForAdmin({
   }
 }
 
+const FALLBACK_CATEGORIES = [
+  'Sunglasses',
+  'Wrist Watches',
+  'Jeans',
+  'Shirts',
+  'Shoes',
+  'Cufflinks',
+] as const
+
 export async function getAllCategories() {
-  await connectToDatabase()
-  const categories = await Product.find({ isPublished: true }).distinct(
-    'category'
-  )
-  // Fallback to known categories when DB is empty (e.g. before seed)
-  if (categories.length === 0) {
-    return Object.keys(
-      (await import('@/lib/constants')).CATEGORY_IMAGES
-    ) as string[]
+  try {
+    await connectToDatabase()
+    const categories = await Product.find({ isPublished: true }).distinct(
+      'category'
+    )
+    if (categories.length > 0) return categories
+  } catch {
+    // DB unavailable or empty - use fallback
   }
-  return categories
+  return [...FALLBACK_CATEGORIES]
 }
 export async function getProductsForCard({
   tag,

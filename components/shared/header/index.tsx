@@ -21,13 +21,15 @@ export default async function Header() {
 							href='/'
 							className='flex items-center header-button text-2xl font-bold text-primary'
 						>
-							<Image
-								src='/icons/logo.png'
-								width={48}
-								height={48}
-								alt={`${site.name} logo`}
-								className='my-1 mx-3'
-							/>
+							<div className='relative my-1 mx-3 h-12 w-12 shrink-0'>
+								<Image
+									src='/icons/logo.png'
+									alt={`${site.name} logo`}
+									fill
+									className='object-contain'
+									sizes='48px'
+								/>
+							</div>
 							<span className='font-libre-baskerville italic'>
 								{site.name}
 							</span>

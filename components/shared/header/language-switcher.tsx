@@ -49,7 +49,7 @@ export default function LanguageSwitcher() {
             Changing language...
           </span>
         ),
-        duration: 3000,
+        duration: 6000,
       })
       i18nRouter.push(pathname, { locale: code })
     },

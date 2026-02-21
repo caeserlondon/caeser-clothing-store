@@ -103,17 +103,15 @@ export default function Footer() {
 				<div className='border-t border-gray-800'>
 					<div className='max-w-7xl mx-auto py-8 px-4 flex flex-col items-center space-y-4'>
 						<div className='flex items-center space-x-4 flex-wrap md:flex-nowrap'>
-							<Image
-								src='/icons/logo.png'
-								alt={`${site.name} logo`}
-								width={48}
-								height={48}
-								className='w-14'
-								style={{
-									maxWidth: 'auto',
-									height: 'auto',
-								}}
-							/>{' '}
+							<div className='relative h-14 w-14 shrink-0'>
+								<Image
+									src='/icons/logo.png'
+									alt={`${site.name} logo`}
+									fill
+									className='object-contain'
+									sizes='56px'
+								/>
+							</div>{' '}
 							<Select
 								value={locale}
 								onOpenChange={(open) => open && prefetchLocales()}
@@ -126,7 +124,7 @@ export default function Footer() {
 												Changing language...
 											</span>
 										),
-										duration: 3000,
+										duration: 6000,
 									})
 									router.push(pathname, { locale: value })
 								}}

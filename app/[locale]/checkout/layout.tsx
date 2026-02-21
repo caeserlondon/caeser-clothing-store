@@ -13,16 +13,15 @@ export default function CheckoutLayout({
 			<header className='bg-card mb-4 border-b'>
 				<div className='max-w-6xl mx-auto flex justify-between items-center'>
 					<Link href='/'>
-						<Image
-							src='/icons/logo.png'
-							alt='logo'
-							width={70}
-							height={70}
-							style={{
-								maxWidth: 'auto',
-								height: 'auto',
-							}}
-						/>
+						<div className='relative h-[70px] w-[70px] shrink-0'>
+							<Image
+								src='/icons/logo.png'
+								alt='logo'
+								fill
+								className='object-contain'
+								sizes='70px'
+							/>
+						</div>
 					</Link>
 					<div>
 						<h1 className='text-3xl'>Checkout</h1>

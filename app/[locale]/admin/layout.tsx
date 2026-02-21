@@ -17,12 +17,15 @@ export default async function AdminLayout({
 				<div className='bg-black text-white'>
 					<div className='flex h-16 items-center px-2'>
 						<Link href='/'>
-							<Image
-								src='/icons/logo.png'
-								width={48}
-								height={48}
-								alt={`${site.name} logo`}
-							/>
+							<div className='relative h-12 w-12 shrink-0'>
+								<Image
+									src='/icons/logo.png'
+									alt={`${site.name} logo`}
+									fill
+									className='object-contain'
+									sizes='48px'
+								/>
+							</div>
 						</Link>
 						<AdminNav className='mx-6 hidden md:flex' />
 						<div className='ml-auto flex items-center space-x-4'>
