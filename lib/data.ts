@@ -293,7 +293,7 @@ const products: IProductInput[] = [
 		description:
 			'Giorgio Armani embraces minimalism with this scaled-back shirt, whosesimple long-sleeved profile speaks for itself. The versatility of this design – a fixture in countless wardrobes –can’t be overstated, as it seamlessly keeps up with both the smart and casual players that currently dominate your rotation.',
 		sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-		colors: ['white', 'Red', 'Black'],
+		colors: ['white', 'Red', 'Black', 'navy'],
 
 		reviews: [],
 	},
@@ -329,7 +329,7 @@ const products: IProductInput[] = [
 			"A simple silhouette merged with Polo Ralph Lauren's elevated sartorial style, this long-sleeved T-shirt is adorned with an intricately embroidered iconic Polo Pony. Crafted from luxuriously soft Pima cotton, it captures the label’s all-American spirit when worn under a checked shirt",
 
 		sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-		colors: ['Navy', 'white', 'Black'],
+		colors: ['Navy', 'white', 'Black', 'red'],
 
 		reviews: [],
 	},
@@ -364,7 +364,7 @@ const products: IProductInput[] = [
 		description:
 			"A pared-back aesthetic is married with precise pleating to create this impeccable top from Homme Plissé Issey Miyake. The Japanese label fuses over 30 years' worth of technical know-how with progressive, modern-day details to create a fluid silhouette. Note how the pleats lend a sense of movement to an otherwise humble wardrobe staple.  How to wear Harrods: Style with tailored trousers, sneakers and a shoulder bag.",
 		sizes: ['S', 'M', 'L', 'XL'],
-		colors: ['Black', 'White'],
+		colors: ['Black', 'White', 'Green'],
 
 		reviews: [],
 	},
@@ -399,7 +399,7 @@ const products: IProductInput[] = [
 		description:
 			"Among the kaleidoscope of prints in the oeuvre of Rei Kawakubo's work at Comme des Garçons, you'll find a recurring penchant for gingham, polka dots and stripes, which likely represent a reference to Rei Kawakubo's first childhood memories of fashion in the early 1950s. Here, the designer's Comme des Garçons PLAY line offers up a striped rendition of its iconic heart-embellished T-shirt, a year-round streetwear staple in its collections.",
 		sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-		colors: ['Blue-White', 'Red-White', 'Black-White'],
+		colors: ['Blue', 'Red', 'Black'],
 
 		reviews: [],
 	},
@@ -436,7 +436,7 @@ const products: IProductInput[] = [
 		description:
 			'Designing for your golfing pursuits, RLX Ralph Lauren delivers all you need to perform on the course at the most stylish level. This rollneck top conjures up the best of the brand: crafted from cotton for breathable wearability, this piece is imbued with a heritage touch thanks to its Scottish-inspired plaid motif.',
 		sizes: ['S', 'M', 'L', 'XL'],
-		colors: ['Green-Blue', 'Red-Blue'],
+		colors: ['Green', 'Red'],
 
 		reviews: [],
 	},
@@ -470,7 +470,7 @@ const products: IProductInput[] = [
 		description:
 			'For its latest collection, Dolce&Gabbana lets simple, yet carefully crafted, garments take centre stage. This long-sleeved T-shirt is a timeless addition to any wardrobe, thanks to its crisp cotton finish, while the contrasting embroidery subtly nods to the piece’s origins.',
 		sizes: ['S', 'M', 'L', 'XL'],
-		colors: ['White', 'Black'],
+		colors: ['White', 'Black', 'Blue'],
 
 		reviews: [],
 	},
@@ -575,7 +575,7 @@ const products: IProductInput[] = [
 		description:
 			'Constructed from a smooth cotton jersey, this Emporio Armani T-shirt offers a substantial drape that holds its boxy shape while remaining breathable. The logo appliqué bridges the gap between classic Ivy League styles and Italian casual-wear, making it an elevated choice for daily ensembles.',
 		sizes: ['S', 'M', 'L', 'XL'],
-		colors: ['Blue-Green', 'Blue-Red'],
+		colors: ['Green', 'Red'],
 
 		reviews: [],
 	},
@@ -679,7 +679,7 @@ const products: IProductInput[] = [
 		description:
 			"Velvet has long since been renowned for its quality and in the hands of Dolce&Gabbana, this is multiplied tenfold. They have been made in Italy with a slim fit that'll remain timeless and flattering after countless seasons of style and have seamless slip pockets as their only decoration. Style them with a pair of chunky boots.",
 		sizes: ['30Wx30L', '32Wx30L', '32Wx32L'],
-		colors: ['Black'],
+		colors: ['Black', 'Green'],
 
 		reviews: [],
 	},
@@ -819,7 +819,7 @@ const products: IProductInput[] = [
 		description:
 			"Handmade in the Veneto region of Northern Italy, these slim-fit jeans boast a slightly higher rise than the original, while still embodying the quality and attention to detail expected from Jacob Cohën. They're imagined in washed black and punctuated by both the signature haircalf patch to the reverse and a stitched initial to the coin pocket, making a classic addition to your denim repertoire.",
 		sizes: ['30Wx30L', '32Wx30L', '32Wx32L', '34Wx32L'],
-		colors: ['Blue', 'Grey'],
+		colors: ['Blue', 'Grey', 'Black'],
 
 		reviews: [],
 	},
@@ -889,7 +889,7 @@ const products: IProductInput[] = [
 		description:
 			'As every gentleman knows, corduroy trousers are a classic menswear staple, and the Federal offering from PAIGE is a timeless pair. Crafted from super-soft micro-corduroy with the perfect amount of stretch for the most comfortable fit, the design is cut to the brand’s contemporary slim-straight silhouette for optimum versatility.',
 		sizes: ['30Wx30L', '32Wx30L', '32Wx32L', '34Wx32L'],
-		colors: ['Deep Woods', 'Deep Navy'],
+		colors: ['Brown', 'Navy', 'Black'],
 
 		reviews: [],
 	},
@@ -924,7 +924,7 @@ const products: IProductInput[] = [
 		description:
 			'Denim may be inherently linked to the casualness of the off-duty wardrobe, but it may as well find its way into smarter edits, at least when BOSS has something to say about it. The label finesses these slim jeans with sartorial precision from stretch-enriched coloured denim to pair with just about any top in your arsenal.',
 		sizes: ['30Wx30L', '32Wx30L', '32Wx32L'],
-		colors: ['beige', 'Black', 'Blue'],
+		colors: ['Beige', 'Black', 'Blue', 'Green'],
 
 		reviews: [],
 	},
@@ -1030,7 +1030,7 @@ const products: IProductInput[] = [
 		description:
 			'The sun-soaked Italian Riviera inspired IWC Schaffhausen’s Portofino watch collection. Calling on the relaxed glamour of the elite hot-spot, the brand creates a design that feels utterly timeless – note the white dial and ageless silver-plated, stainless steel case of this iteration, for example, complete with sea-blue hands and numerals. Originally introduced in 2003, it’s one of the Swiss manufacturer’s most popular timepieces, housing a 25-jewel automatic movement that performs as exceptionally as you’d expect of the revered watchmaker.',
 		sizes: ['39mm', '41mm'],
-		colors: ['Blue', 'Green'],
+		colors: ['Blue', 'Green', 'Black'],
 		reviews: [],
 	},
 	{
@@ -1434,7 +1434,7 @@ const products: IProductInput[] = [
 		description:
 			'Zegna’s Triple Stitch design has become something of a staple among those in the know, with its signature crossover elastic laces and clean lines. Here, the Italian House translates the soft suede profile atop woven jute soles, creating a refined yet casual espadrille shoe.',
 		sizes: ['8', '9', '10', '11'],
-		colors: ['blue', 'Black', 'Grey'],
+		colors: ['Blue', 'Black', 'Grey'],
 
 		reviews: [],
 	},
@@ -2153,7 +2153,7 @@ const products: IProductInput[] = [
 		description:
 			'Tateossian’s Mechanical collection boasts signature designs inspired by motion and movement. Crafted from rose gold-plated stainless steel, the Square Gear cufflinks display these creative principles flawlessly. With coloured metal gears interlocked in a square frame, the pair makes for a sleek and eye-catching addition to your smart styling edit.',
 		sizes: ['Standard'],
-		colors: ['Rose Gold'],
+		colors: ['Gold'],
 
 		reviews: [],
 	},

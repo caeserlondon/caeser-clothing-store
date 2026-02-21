@@ -125,6 +125,12 @@ export async function getAllCategories() {
   const categories = await Product.find({ isPublished: true }).distinct(
     'category'
   )
+  // Fallback to known categories when DB is empty (e.g. before seed)
+  if (categories.length === 0) {
+    return Object.keys(
+      (await import('@/lib/constants')).CATEGORY_IMAGES
+    ) as string[]
+  }
   return categories
 }
 export async function getProductsForCard({
