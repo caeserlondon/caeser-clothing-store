@@ -1,4 +1,4 @@
-# Caeser Clothing Store
+# 🛍️ Caeser Store
 
 A full-featured e-commerce platform built with Next.js 15 and MongoDB, inspired by Amazon's shopping experience. Browse products, manage inventory, process payments, and keep customers informed—all in one modern web application.
 
@@ -7,10 +7,6 @@ A full-featured e-commerce platform built with Next.js 15 and MongoDB, inspired 
 |                  Store                   |                  Admin                   |
 | :--------------------------------------: | :--------------------------------------: |
 | ![Store screen](assets/store-screen.png) | ![Admin screen](assets/admin-screen.png) |
-
-## Features
-
-### Shopping Experience
 
 - **Product catalog** — Categories including Shirts, Jeans, Shoes, Wrist Watches, Sunglasses, and Cufflinks
 - **Search & filters** — Find products by name, category, tag, price range, and rating
@@ -54,6 +50,58 @@ A full-featured e-commerce platform built with Next.js 15 and MongoDB, inspired 
 
 - **Auth.js** — Sign in with credentials, Google OAuth, or Magic Link
 - **Role-based access** — Admin and User roles with protected routes
+
+### ▶️ Try the Demo (Test Accounts)
+
+> ℹ️ All accounts use **test mode** — no real payments are processed. Demo data resets nightly.
+
+| Role        | Email               | Password     |
+| ----------- | ------------------- | ------------ |
+| 👤 Customer | `user@example.com`  | `User@1234`  |
+| 👨‍💼 Admin    | `admin@example.com` | `Admin@1234` |
+
+#### Quick Start:
+
+- **As a customer**: Log in with credentials above or sign up instantly using **Google OAuth**
+- **As admin**: Log in → visit `/admin` to access the dashboard (inventory, orders, analytics)
+
+### 💳 Test Payment Options
+
+#### **Option 1: Stripe Credit Card** (Direct Entry)
+
+| Field               | Value                             |
+| ------------------- | --------------------------------- |
+| **Card Number**     | `4111 1111 1111 1111`             |
+| **Expiry Date**     | Any future date (e.g., `12 / 30`) |
+| **CVC**             | Any 3 digits (e.g., `123`)        |
+| **ZIP/Postal Code** | `SW1A 1AA`                        |
+
+#### **Option 2: PayPal** (Sandbox Login Required)
+
+1. At checkout, click **"Pay with PayPal"**
+2. Log in with Sandbox credentials:
+   - **Email**: `buyer+uk@personal.example.com`
+   - **Password**: `PayPal@Demo123` _(see security note below)_
+3. On PayPal's payment screen, select:
+   - ✅ **PayPal balance** (£10,000 available), OR
+   - ✅ **Saved test card**: Visa ending in `9695` (expires 03/2031)
+4. Click **"Pay Now"** → You'll return to order confirmation
+
+> 🔒 All transactions occur in PayPal's sandbox environment. No real money is charged or transferred.
+
+---
+
+### 🔒 Security Transparency
+
+> _Demo credentials and payment details are published here for recruiter convenience. In production deployments:_
+>
+> - ✅ Credentials would be environment-specific (`.env`)
+> - ✅ Admin routes would require RBAC + session validation
+> - ✅ Passwords would enforce complexity rules
+> - ✅ Payment processing would use live API keys (never committed to Git)
+> - ✅ Seed scripts would run only in development environments
+
+_This demo uses isolated test data with no connection to real payment systems or customer information._
 
 ## Tech Stack
 
