@@ -124,7 +124,7 @@ export default function Footer() {
 												Changing language...
 											</span>
 										),
-										duration: 6000,
+										duration: 4000,
 									})
 									router.push(pathname, { locale: value })
 								}}

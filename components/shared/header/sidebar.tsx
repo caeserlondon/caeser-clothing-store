@@ -14,7 +14,7 @@ export default async function Sidebar({
   const direction = getDirection(locale) === 'rtl' ? 'right' : 'left'
 
   return (
-    <Drawer direction={direction}>
+    <Drawer direction={direction} modal={false}>
       <SidebarContent
         categories={categories}
         session={session}
