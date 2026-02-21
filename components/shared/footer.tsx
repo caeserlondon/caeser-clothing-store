@@ -6,6 +6,7 @@ import { useRouter as useNextRouter } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import useSettingStore from '@/hooks/use-setting-store'
+import { useToast } from '@/hooks/use-toast'
 import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select'
 
 import { i18n } from '@/i18n-config'
@@ -18,6 +19,7 @@ export default function Footer() {
 	const nextRouter = useNextRouter()
 	const pathname = usePathname()
 	const locale = useLocale()
+	const { toast } = useToast()
 	const prefetchLocales = useCallback(() => {
 		i18n.locales.forEach(({ code }) => {
 			if (code !== locale) {
@@ -116,6 +118,16 @@ export default function Footer() {
 								value={locale}
 								onOpenChange={(open) => open && prefetchLocales()}
 								onValueChange={(value) => {
+									if (value === locale) return
+									toast({
+										description: (
+											<span className='flex items-center gap-2'>
+												<span className='h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent' />
+												Changing language...
+											</span>
+										),
+										duration: 3000,
+									})
 									router.push(pathname, { locale: value })
 								}}
 							>
@@ -125,13 +137,9 @@ export default function Footer() {
 								<SelectContent>
 									{locales.map((lang, index) => (
 										<SelectItem key={index} value={lang.code}>
-											<Link
-												className='w-full flex items-center gap-1'
-												href={pathname}
-												locale={lang.code}
-											>
+											<span className='flex items-center gap-1'>
 												<span className='text-lg'>{lang.icon}</span> {lang.name}
-											</Link>
+											</span>
 										</SelectItem>
 									))}
 								</SelectContent>
