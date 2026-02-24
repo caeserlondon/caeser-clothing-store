@@ -64,7 +64,7 @@ export const defaultSetting: ISettingInput = {
 		code: locale.code,
 		name: locale.name,
 	})),
-	defaultLanguage: 'en-GB',
+	defaultLanguage: 'en',
 	availableCurrencies: [
 		{ name: 'British Pound', code: 'GBP', symbol: '£', convertRate: 1 },
 		{
