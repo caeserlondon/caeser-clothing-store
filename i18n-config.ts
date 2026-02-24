@@ -1,10 +1,10 @@
 export const i18n = {
 	locales: [
-		{ code: 'en-GB', name: 'English', icon: '🇬🇧' },
+		{ code: 'en', name: 'English', icon: '🇬🇧' },
 		{ code: 'fr', name: 'Français', icon: '🇫🇷' },
 		{ code: 'ar', name: 'العربية', icon: '🇦🇪' },
 	],
-	defaultLocale: 'en-GB',
+	defaultLocale: 'en',
 }
 
 export const getDirection = (locale: string) => {

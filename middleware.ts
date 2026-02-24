@@ -16,7 +16,7 @@ const publicPages = [
   // (/secret requires auth)
 ]
 
-const intlMiddleware = createMiddleware(routing)
+const intlMiddleware = createMiddleware(routing, { localeDetection: false })
 const { auth } = NextAuth(authConfig)
 
 export default auth((req) => {

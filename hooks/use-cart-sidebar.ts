@@ -4,7 +4,7 @@ import useCartStore from './use-cart-store'
 import useDeviceType from './use-device-type'
 
 const locales = i18n.locales
-	.filter((locale) => locale.code !== 'en-GB')
+	.filter((locale) => locale.code !== 'en')
 	.map((locale) => locale.code)
 
 const isNotInPaths = (s: string) => {
