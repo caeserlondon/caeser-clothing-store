@@ -2356,9 +2356,9 @@ We strive to ensure all product descriptions, pricing, and availability informat
 At Caeser Store, our customer service team is here to ensure you have the best shopping experience. Whether you need assistance with orders, product details, or returns, we are committed to providing prompt and helpful support.
 
 If you have questions or concerns, please reach out to us through our multiple contact options:
-- **Email:** caeserlondon@gmail
+- **Email:** caeserlondon@gmail.com
 - **Phone:** +44 078 6886 3113
-- **Live Chat:** Available on our website for instant assistance
+- **Live Chat:** Coming soon on our website for real-time assistance.
 
 We also provide helpful resources such as order tracking, product guides, and FAQs to assist you with common inquiries. Your satisfaction is our priority, and we're here to resolve any issues quickly and efficiently. Thank you for choosing us!`,
 			isPublished: true,
