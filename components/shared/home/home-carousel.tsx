@@ -1,67 +1,51 @@
-'use client'
-
-import * as React from 'react'
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
-import Autoplay from 'embla-carousel-autoplay'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
+
+import { buttonVariants } from '@/components/ui/button'
 import { Link } from '@/i18n/routing'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { useTranslations } from 'next-intl'
-import { ICarousel } from '@/types'
+import type { Carousel } from '@/types'
+import HomeCarouselEnhancer from './home-carousel-enhancer'
 
-export function HomeCarousel({ items }: { items: ICarousel[] }) {
-  const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
-  )
+export async function HomeCarousel({ items }: { items: Carousel[] }) {
+	const t = await getTranslations('Home')
 
-  const t = useTranslations('Home')
+	if (!items.length) return null
 
-  return (
-    <Carousel
-      dir='ltr'
-      plugins={[plugin.current]}
-      className='w-full mx-auto '
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-    >
-      <CarouselContent>
-        {items.map((item) => (
-          <CarouselItem key={item.title}>
-            <Link href={item.url}>
-              <div className='flex aspect-[16/6] items-center justify-center p-6 relative -m-1'>
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className='object-cover'
-                  priority
-                />
-                <div className='absolute w-1/4 left-16 md:left-32 top-1/2 transform -translate-y-1/2'>
-                  <h2
-                    className={cn(
-                      'text-xl md:text-6xl font-bold mb-4 text-primary  '
-                    )}
-                  >
-                    {t(`${item.title}`)}
-                  </h2>
-                  <Button className='hidden md:block'>
-                    {t(`${item.buttonCaption}`)}
-                  </Button>
-                </div>
-              </div>
-            </Link>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className='left-0 md:left-12' />
-      <CarouselNext className='right-0 md:right-12' />
-    </Carousel>
-  )
+	const firstItem = items[0]
+
+	return (
+		<div className='relative mx-auto w-full'>
+			<section
+				id='home-hero-fallback'
+				className='relative flex aspect-[16/6] items-center overflow-hidden'
+			>
+				<Image
+					src={firstItem.image}
+					alt={t(firstItem.title)}
+					fill
+					priority
+					fetchPriority='high'
+					loading='eager'
+					sizes='(max-width: 1400px) 100vw, 1400px'
+					className='object-cover'
+				/>
+
+				<div className='absolute left-6 top-1/2 w-2/3 -translate-y-1/2 md:left-16 md:w-1/3'>
+					<h1 className='mb-4 text-xl font-bold text-primary md:text-6xl'>
+						{t(firstItem.title)}
+					</h1>
+
+					<Link
+						href={firstItem.url}
+						className={cn(buttonVariants(), 'hidden md:inline-flex')}
+					>
+						{t(firstItem.buttonCaption)}
+					</Link>
+				</div>
+			</section>
+
+			{items.length > 1 ? <HomeCarouselEnhancer items={items} /> : null}
+		</div>
+	)
 }
