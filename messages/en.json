@@ -6,6 +6,7 @@
 		"Gold": "Gold",
 		"Green": "Green",
 		"Red": "Red",
+		"Theme": "Theme",
 		"Shop By Department": "Shop By Department",
 		"Account & Orders": "Account & Orders",
 		"Sign up": "Sign up",
@@ -31,24 +32,30 @@
 		"Help": "Help",
 		"Site Menu": "Site Menu",
 		"Subtotal": "Subtotal",
-		"Go to cart": "Go to cart"
+		"Go to cart": "Go to cart",
+		"See More": "See More",
+		"Shop Now": "Shop Now"
 	},
 	"Home": {
 		"Categories to explore": "Categories to explore",
-		"See More": "See More",
+		"Browse all categories": "Browse all categories",
 		"Explore New Arrivals": "Explore New Arrivals",
 		"Discover Best Sellers": "Discover Best Sellers",
 		"Featured Products": "Featured Products",
-		"View All": "View All",
-		"Shop Now": "Shop Now",
+		"View all new arrivals": "View all new arrivals",
+		"View all best sellers": "View all best sellers",
+		"Shop featured products": "Shop featured products",
 		"Today's Deals": "Today's Deals",
 		"Best Selling Products": "Best Selling Products",
 		"Related to items that you've viewed": "Related to items that you've viewed",
 		"Your browsing history": "Your browsing history",
 		"Discover Our Most Fashionable New Arrivals": "Discover Our Most Fashionable New Arrivals",
 		"Elevate Your Style with Exquisite Cufflinks": "Elevate Your Style with Exquisite Cufflinks",
-		"Explore the Finest Collection of Wrist Watches": "Explore the Finest Collection of Wrist Watches"
+		"Explore the Finest Collection of Wrist Watches": "Explore the Finest Collection of Wrist Watches",
+		"Browse all cufflinks": "Browse all cufflinks",
+		"Browse all wrist watches": "Browse all wrist watches"
 	},
+
 	"Product": {
 		"Added to Cart": "Added to Cart",
 		"Go to Cart": "Go to Cart",
