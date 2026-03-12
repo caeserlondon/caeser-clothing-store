@@ -6,6 +6,7 @@
 		"Gold": "ذهبي",
 		"Green": "أخضر",
 		"Red": "أحمر",
+		"Theme": "السمة",
 		"Shop By Department": "التسوق حسب القسم",
 		"Account & Orders": "الحساب والطلبات",
 		"Sign up": "اشتراك",
@@ -31,23 +32,28 @@
 		"Help": "مساعدة",
 		"Site Menu": "قائمة الموقع",
 		"Subtotal": "المجموع الفرعي",
-		"Go to cart": "اذهب إلى السلة"
+		"Go to cart": "اذهب إلى السلة",
+		"See More": "شاهد المزيد",
+		"Shop Now": "تسوق الآن"
 	},
 	"Home": {
 		"Categories to explore": "فئات للاستكشاف",
-		"See More": "شاهد المزيد",
+		"Browse all categories": "تصفح جميع الفئات",
 		"Explore New Arrivals": "اكتشف الوافدين الجدد",
 		"Discover Best Sellers": "اكتشف الأكثر مبيعًا",
 		"Featured Products": "المنتجات المميزة",
-		"View All": "عرض الكل",
-		"Shop Now": "تسوق الآن",
+		"View all new arrivals": "عرض جميع الوافدين الجدد",
+		"View all best sellers": "عرض جميع الأكثر مبيعًا",
+		"Shop featured products": "تسوق المنتجات المميزة",
 		"Today's Deals": "عروض اليوم",
 		"Best Selling Products": "المنتجات الأكثر مبيعًا",
 		"Related to items that you've viewed": "ذات صلة بالعناصر التي عرضتها",
 		"Your browsing history": "سجل التصفح الخاص بك",
 		"Discover Our Most Fashionable New Arrivals": "اكتشف أحدث التصاميم العصرية لدينا",
 		"Elevate Your Style with Exquisite Cufflinks": "ارتقِ بأسلوبك بأزرار أكمام فاخرة",
-		"Explore the Finest Collection of Wrist Watches": "استكشف أرقى تشكيلة من الساعات اليدوية"
+		"Explore the Finest Collection of Wrist Watches": "استكشف أرقى تشكيلة من الساعات اليدوية",
+		"Browse all cufflinks": "تصفح جميع أزرار الأكمام",
+		"Browse all wrist watches": "تصفح جميع الساعات اليدوية"
 	},
 	"Product": {
 		"Added to Cart": "أضيف إلى السلة",
