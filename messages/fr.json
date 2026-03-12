@@ -6,6 +6,7 @@
 		"Gold": "Or",
 		"Green": "Vert",
 		"Red": "Rouge",
+		"Theme": "Thème",
 		"Shop By Department": "Magasiner par département",
 		"Account & Orders": "Compte et commandes",
 		"Sign up": "S'inscrire",
@@ -31,23 +32,28 @@
 		"Help": "Aide",
 		"Site Menu": "Menu du site",
 		"Subtotal": "Sous-total",
-		"Go to cart": "Aller au panier"
+		"Go to cart": "Aller au panier",
+		"See More": "Voir plus",
+		"Shop Now": "Acheter maintenant"
 	},
 	"Home": {
 		"Categories to explore": "Catégories à explorer",
-		"See More": "Voir plus",
+		"Browse all categories": "Parcourir toutes les catégories",
 		"Explore New Arrivals": "Explorer les nouveautés",
 		"Discover Best Sellers": "Découvrir les meilleures ventes",
 		"Featured Products": "Produits vedettes",
-		"View All": "Tout afficher",
-		"Shop Now": "Acheter maintenant",
+		"View all new arrivals": "Voir toutes les nouveautés",
+		"View all best sellers": "Voir toutes les meilleures ventes",
+		"Shop featured products": "Acheter les produits vedettes",
 		"Today's Deals": "Offres du jour",
 		"Best Selling Products": "Produits les plus vendus",
 		"Related to items that you've viewed": "Lié aux articles que vous avez consultés",
 		"Your browsing history": "Votre historique de navigation",
 		"Discover Our Most Fashionable New Arrivals": "Découvrez nos nouveautés les plus tendances",
 		"Elevate Your Style with Exquisite Cufflinks": "Sublimez votre style avec des boutons de manchette exquis",
-		"Explore the Finest Collection of Wrist Watches": "Découvrez la plus belle collection de montres-bracelets"
+		"Explore the Finest Collection of Wrist Watches": "Découvrez la plus belle collection de montres-bracelets",
+		"Browse all cufflinks": "Parcourir tous les boutons de manchette",
+		"Browse all wrist watches": "Parcourir toutes les montres-bracelets"
 	},
 	"Product": {
 		"Added to Cart": "Ajouté au panier",
