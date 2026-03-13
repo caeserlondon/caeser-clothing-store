@@ -11,6 +11,7 @@ out/
 dist/
 build/
 coverage/
+explain.md
 
 # ----------------------------------------------------------------------------
 # Dependency Management
