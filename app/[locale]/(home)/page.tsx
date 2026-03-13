@@ -30,11 +30,12 @@ export default async function HomePage() {
 	const bestSellers = await getProductsForCard({
 		tag: 'best-seller',
 	})
+
 	const cards = [
 		{
 			title: t('Categories to explore'),
 			link: {
-				text: t('See More'),
+				text: t('Browse all categories'),
 				href: '/search',
 			},
 			items: categories.map((category) => ({
@@ -47,7 +48,7 @@ export default async function HomePage() {
 			title: t('Explore New Arrivals'),
 			items: newArrivals,
 			link: {
-				text: t('View All'),
+				text: t('View all new arrivals'),
 				href: '/search?tag=new-arrival',
 			},
 		},
@@ -55,16 +56,16 @@ export default async function HomePage() {
 			title: t('Discover Best Sellers'),
 			items: bestSellers,
 			link: {
-				text: t('View All'),
-				href: '/search?tag=new-arrival',
+				text: t('View all best sellers'),
+				href: '/search?tag=best-seller',
 			},
 		},
 		{
 			title: t('Featured Products'),
 			items: featureds,
 			link: {
-				text: t('Shop Now'),
-				href: '/search?tag=new-arrival',
+				text: t('Shop featured products'),
+				href: '/search?tag=featured',
 			},
 		},
 	]
