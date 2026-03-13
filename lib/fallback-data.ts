@@ -43,21 +43,21 @@ export const defaultSetting: ISettingInput = {
 	carousels: [
 		{
 			title: 'Discover Our Most Fashionable New Arrivals',
-			buttonCaption: 'Shop Now',
-			image: '/images/banner1.jpg',
+			buttonCaption: 'View all new arrivals',
+			image: '/images/banner1.avif',
 			url: '/search?tag=new-arrival',
 		},
 		{
 			title: 'Elevate Your Style with Exquisite Cufflinks',
-			buttonCaption: 'See More',
-			image: '/images/banner2.jpg',
-			url: '/search?category=Cufflinks',
+			buttonCaption: 'Browse all cufflinks',
+			image: '/images/banner2.avif',
+			url: '/search?q=all&category=Cufflinks&tag=all&price=all&rating=all&sort=best-selling&page=1',
 		},
 		{
 			title: 'Explore the Finest Collection of Wrist Watches',
-			buttonCaption: 'See More',
-			image: '/images/banner3.jpg',
-			url: '/search?category=Wrist+Watches',
+			buttonCaption: 'Browse all wrist watches',
+			image: '/images/banner3.avif',
+			url: '/search?q=all&category=Wrist+Watches&tag=all&price=all&rating=all&sort=best-selling&page=1',
 		},
 	],
 	availableLanguages: i18n.locales.map((locale) => ({
