@@ -2444,25 +2444,25 @@ We also provide helpful resources such as order tracking, product guides, and FA
 		{
 			// !1 carousel - New Arrivals
 			title: 'Discover Our Most Fashionable New Arrivals',
-			buttonCaption: 'Shop Now',
-			image: '/images/banner1.jpg',
+			buttonCaption: 'View all new arrivals',
+			image: '/images/banner1.avif',
 			url: '/search?tag=new-arrival',
 			isPublished: true,
 		},
 		{
 			// !2 carousel - Cufflinks Collection
 			title: 'Elevate Your Style with Exquisite Cufflinks',
-			buttonCaption: 'See More',
-			image: '/images/banner2.jpg',
-			url: '/search?q=all&category=Cufflinks&tag=all&price=all&rating=all&sort=best-selling&page=1',
+			buttonCaption: 'Browse all cufflinks',
+			image: '/images/banner2.avif',
+			url: '/search?category=Cufflinks',
 			isPublished: true,
 		},
 		{
 			// !3 carousel - Wrist Watches
 			title: 'Explore the Finest Collection of Wrist Watches',
-			buttonCaption: 'See More',
-			image: '/images/banner3.jpg',
-			url: '/search?q=all&category=Wrist+Watches&tag=all&price=all&rating=all&sort=best-selling&page=1',
+			buttonCaption: 'Browse all wrist watches',
+			image: '/images/banner3.avif',
+			url: '/search?category=Wrist+Watches',
 			isPublished: true,
 		},
 	],
@@ -2494,23 +2494,23 @@ We also provide helpful resources such as order tracking, product guides, and FA
 				{
 					// !1 carousel - New Arrivals
 					title: 'Discover Our Most Fashionable New Arrivals',
-					buttonCaption: 'Shop Now',
-					image: '/images/banner1.jpg',
+					buttonCaption: 'View all new arrivals',
+					image: '/images/banner1.avif',
 					url: '/search?tag=new-arrival',
 				},
 				{
 					// !2 carousel - Cufflinks Collection
 					title: 'Elevate Your Style with Exquisite Cufflinks',
-					buttonCaption: 'See More',
-					image: '/images/banner2.jpg',
-					url: '/search?q=all&category=Cufflinks&tag=all&price=all&rating=all&sort=best-selling&page=1',
+					buttonCaption: 'Browse all cufflinks',
+					image: '/images/banner2.avif',
+					url: '/search?category=Cufflinks',
 				},
 				{
 					// !3 carousel - Wrist Watches
 					title: 'Explore the Finest Collection of Wrist Watches',
-					buttonCaption: 'See More',
-					image: '/images/banner3.jpg',
-					url: '/search?q=all&category=Wrist+Watches&tag=all&price=all&rating=all&sort=best-selling&page=1',
+					buttonCaption: 'Browse all wrist watches',
+					image: '/images/banner3.avif',
+					url: '/search?category=Wrist+Watches',
 				},
 			],
 			availableLanguages: i18n.locales.map((locale) => ({
