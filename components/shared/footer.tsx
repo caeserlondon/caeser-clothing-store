@@ -1,17 +1,23 @@
 'use client'
+
 import { ChevronUp } from 'lucide-react'
 import Image from 'next/image'
-import { useCallback } from 'react'
 import { useRouter as useNextRouter } from 'next/navigation'
+import { useCallback } from 'react'
 
 import { Button } from '@/components/ui/button'
 import useSettingStore from '@/hooks/use-setting-store'
 import { useToast } from '@/hooks/use-toast'
-import { Select, SelectContent, SelectItem, SelectTrigger } from '../ui/select'
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from '../ui/select'
 
 import { i18n } from '@/i18n-config'
-import { Link, usePathname, useRouter, getPathname } from '@/i18n/routing'
-import { SelectValue } from '@radix-ui/react-select'
+import { getPathname, Link, usePathname, useRouter } from '@/i18n/routing'
 import { useLocale, useTranslations } from 'next-intl'
 
 export default function Footer() {
@@ -20,6 +26,7 @@ export default function Footer() {
 	const pathname = usePathname()
 	const locale = useLocale()
 	const { toast } = useToast()
+
 	const prefetchLocales = useCallback(() => {
 		i18n.locales.forEach(({ code }) => {
 			if (code !== locale) {
@@ -27,26 +34,31 @@ export default function Footer() {
 			}
 		})
 	}, [locale, pathname, nextRouter])
+
 	const {
 		setting: { site, availableCurrencies, currency },
 		setCurrency,
 	} = useSettingStore()
+
 	const { locales } = i18n
 	const t = useTranslations()
+
 	return (
-		<footer className='bg-black  text-white underline-link'>
+		<footer className='bg-black text-white underline-link'>
 			<div className='w-full'>
 				<Button
+					type='button'
 					variant='ghost'
-					className='bg-gray-800 w-full  rounded-none '
+					className='w-full rounded-none bg-gray-800'
 					onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 				>
-					<ChevronUp className='mr-2 h-4 w-4' />
+					<ChevronUp className='mr-2 h-4 w-4' aria-hidden='true' />
 					{t('Footer.Back to top')}
 				</Button>
-				<div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-6 max-w-7xl mx-auto'>
+
+				<div className='mx-auto grid max-w-7xl grid-cols-1 gap-6 p-6 md:grid-cols-3'>
 					<div>
-						<h3 className='font-bold mb-2'>{t('Footer.Get to Know Us')}</h3>
+						<h3 className='mb-2 font-bold'>{t('Footer.Get to Know Us')}</h3>
 						<ul className='space-y-2'>
 							<li>
 								<Link href='/page/careers'>{t('Footer.Careers')}</Link>
@@ -61,8 +73,9 @@ export default function Footer() {
 							</li>
 						</ul>
 					</div>
+
 					<div>
-						<h3 className='font-bold mb-2'>{t('Footer.Make Money with Us')}</h3>
+						<h3 className='mb-2 font-bold'>{t('Footer.Make Money with Us')}</h3>
 						<ul className='space-y-2'>
 							<li>
 								<Link href='/page/sell'>
@@ -81,8 +94,9 @@ export default function Footer() {
 							</li>
 						</ul>
 					</div>
+
 					<div>
-						<h3 className='font-bold mb-2'>{t('Footer.Let Us Help You')}</h3>
+						<h3 className='mb-2 font-bold'>{t('Footer.Let Us Help You')}</h3>
 						<ul className='space-y-2'>
 							<li>
 								<Link href='/page/shipping'>
@@ -100,9 +114,10 @@ export default function Footer() {
 						</ul>
 					</div>
 				</div>
+
 				<div className='border-t border-gray-800'>
-					<div className='max-w-7xl mx-auto py-8 px-4 flex flex-col items-center space-y-4'>
-						<div className='flex items-center space-x-4 flex-wrap md:flex-nowrap'>
+					<div className='mx-auto flex max-w-7xl flex-col items-center space-y-4 px-4 py-8'>
+						<div className='flex flex-wrap items-center space-x-4 md:flex-nowrap'>
 							<div className='relative h-14 w-14 shrink-0'>
 								<Image
 									src='/icons/logo.png'
@@ -111,37 +126,48 @@ export default function Footer() {
 									className='object-contain'
 									sizes='56px'
 								/>
-							</div>{' '}
+							</div>
+
 							<Select
 								value={locale}
 								onOpenChange={(open) => open && prefetchLocales()}
 								onValueChange={(value) => {
 									if (value === locale) return
+
 									toast({
 										description: (
 											<span className='flex items-center gap-2'>
-												<span className='h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent' />
+												<span
+													className='h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent'
+													aria-hidden='true'
+												/>
 												Changing language...
 											</span>
 										),
 										duration: 4000,
 									})
+
 									router.push(pathname, { locale: value })
 								}}
 							>
-								<SelectTrigger>
+								<SelectTrigger aria-label={t('Footer.Select a language')}>
 									<SelectValue placeholder={t('Footer.Select a language')} />
 								</SelectTrigger>
+
 								<SelectContent>
 									{locales.map((lang, index) => (
 										<SelectItem key={index} value={lang.code}>
 											<span className='flex items-center gap-1'>
-												<span className='text-lg'>{lang.icon}</span> {lang.name}
+												<span className='text-lg' aria-hidden='true'>
+													{lang.icon}
+												</span>
+												{lang.name}
 											</span>
 										</SelectItem>
 									))}
 								</SelectContent>
 							</Select>
+
 							<Select
 								value={currency}
 								onValueChange={(value) => {
@@ -149,15 +175,16 @@ export default function Footer() {
 									window.scrollTo(0, 0)
 								}}
 							>
-								<SelectTrigger>
+								<SelectTrigger aria-label={t('Footer.Select a currency')}>
 									<SelectValue placeholder={t('Footer.Select a currency')} />
 								</SelectTrigger>
+
 								<SelectContent>
 									{availableCurrencies
 										.filter((x) => x.code)
-										.map((currency, index) => (
-											<SelectItem key={index} value={currency.code}>
-												{currency.name} ({currency.code})
+										.map((currencyItem, index) => (
+											<SelectItem key={index} value={currencyItem.code}>
+												{currencyItem.name} ({currencyItem.code})
 											</SelectItem>
 										))}
 								</SelectContent>
@@ -166,18 +193,21 @@ export default function Footer() {
 					</div>
 				</div>
 			</div>
+
 			<div className='p-4'>
-				<div className='flex justify-center  gap-3 text-sm'>
+				<div className='flex justify-center gap-3 text-sm'>
 					<Link href='/page/conditions-of-use'>
 						{t('Footer.Conditions of Use')}
 					</Link>
 					<Link href='/page/privacy-policy'>{t('Footer.Privacy Notice')}</Link>
 					<Link href='/page/help'>{t('Footer.Help')}</Link>
 				</div>
+
 				<div className='flex justify-center text-sm'>
-					<p> © {site.copyright}</p>
+					<p>© {site.copyright}</p>
 				</div>
-				<div className='mt-8 mb-10 flex justify-center text-sm text-gray-400'>
+
+				<div className='mb-10 mt-8 flex justify-center text-sm text-gray-400'>
 					{site.address} | {site.phone}
 				</div>
 			</div>
