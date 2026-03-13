@@ -16,56 +16,49 @@ import { useTranslations } from 'next-intl'
 
 export default function ThemeSwitcher() {
 	const { theme, setTheme } = useTheme()
-	// const { availableColors, color, setColor } = useColorStore(theme)
 	const t = useTranslations('Header')
+	const isMounted = useIsMounted()
+
 	const changeTheme = (value: string) => {
 		setTheme(value)
 	}
-	const isMounted = useIsMounted()
+
+	const currentLabel = theme === 'dark' && isMounted ? t('Dark') : t('Light')
+
 	return (
 		<DropdownMenu>
-			<DropdownMenuTrigger className='header-button h-[41px]'>
+			<DropdownMenuTrigger
+				className='header-button h-[41px]'
+				aria-label={`${t('Theme')}: ${currentLabel}`}
+			>
 				{theme === 'dark' && isMounted ? (
 					<div className='flex items-center gap-1'>
-						<Moon className='h-4 w-4' /> {t('Dark')} <ChevronDownIcon />
+						<Moon className='h-4 w-4' aria-hidden='true' />
+						{t('Dark')}
+						<ChevronDownIcon aria-hidden='true' />
 					</div>
 				) : (
 					<div className='flex items-center gap-1'>
-						<Sun className='h-4 w-4' /> {t('Light')} <ChevronDownIcon />
+						<Sun className='h-4 w-4' aria-hidden='true' />
+						{t('Light')}
+						<ChevronDownIcon aria-hidden='true' />
 					</div>
 				)}
 			</DropdownMenuTrigger>
+
 			<DropdownMenuContent className='w-56'>
-				<DropdownMenuLabel>Theme</DropdownMenuLabel>
+				<DropdownMenuLabel>{t('Theme')}</DropdownMenuLabel>
 
 				<DropdownMenuRadioGroup value={theme} onValueChange={changeTheme}>
 					<DropdownMenuRadioItem value='dark'>
-						<Moon className='h-4 w-4 mr-1' /> {t('Dark')}
+						<Moon className='mr-1 h-4 w-4' aria-hidden='true' />
+						{t('Dark')}
 					</DropdownMenuRadioItem>
 					<DropdownMenuRadioItem value='light'>
-						<Sun className='h-4 w-4 mr-1' /> {t('Light')}
+						<Sun className='mr-1 h-4 w-4' aria-hidden='true' />
+						{t('Light')}
 					</DropdownMenuRadioItem>
 				</DropdownMenuRadioGroup>
-
-				{/* <DropdownMenuSeparator /> */}
-
-				{/* <DropdownMenuLabel>{t('Color')}</DropdownMenuLabel> */}
-
-				{/* <DropdownMenuRadioGroup
-          value={color.name}
-          onValueChange={(value) => setColor(value, true)}
-        >
-          {availableColors.map((c) => (
-            <DropdownMenuRadioItem key={c.name} value={c.name}>
-              <div
-                style={{ backgroundColor: c.name }}
-                className='h-4 w-4 mr-1 rounded-full'
-              ></div>
-
-              {t(c.name)}
-            </DropdownMenuRadioItem>
-          ))}
-        </DropdownMenuRadioGroup> */}
 			</DropdownMenuContent>
 		</DropdownMenu>
 	)
