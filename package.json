@@ -2,20 +2,30 @@
 	"name": "caeser-store",
 	"version": "0.1.0",
 	"private": true,
+	"packageManager": "pnpm@10.32.1",
+	"engines": {
+		"node": "22.x"
+	},
 	"pnpm": {
 		"overrides": {
-			"minimatch": ">=10.2.1",
-			"nanoid": ">=5.0.9",
-			"ajv": ">=8.18.0"
-		}
+			"nanoid": ">=5.0.9"
+		},
+		"ignoredBuiltDependencies": [
+			"esbuild",
+			"msgpackr-extract",
+			"sharp",
+			"unrs-resolver"
+		]
 	},
 	"scripts": {
 		"email": "email dev",
-		"seed": "npx tsx ./lib/db/seed.ts",
+		"seed": "pnpm exec tsx ./lib/db/seed.ts",
 		"dev": "next dev --turbopack",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"deepclean": "rm -rf .next node_modules pnpm-lock.yaml && pnpm install"
 	},
 	"dependencies": {
 		"@auth/mongodb-adapter": "^3.7.4",
@@ -71,11 +81,11 @@
 		"zustand": "^5.0.2"
 	},
 	"devDependencies": {
-		"@eslint/eslintrc": "^3",
+		"@eslint/eslintrc": "^3.3.5",
 		"@react-email/components": "^1.0.7",
 		"@react-email/render": "^2.0.4",
 		"@types/bcryptjs": "^2.4.6",
-		"@types/node": "^20.19.33",
+		"@types/node": "^22",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"dotenv": "^17.2.4",
