@@ -47,6 +47,7 @@ const getHomePageData = unstable_cache(
 	},
 	['home-page-data'],
 	{
+		tags: ['home-page', 'products', 'setting'],
 		revalidate: 300,
 	},
 )

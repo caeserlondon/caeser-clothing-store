@@ -24,8 +24,8 @@ export async function HomeCarousel({ items }: { items: Carousel[] }) {
 					src={firstItem.image}
 					alt={t(firstItem.title)}
 					fill
-					priority
 					fetchPriority='high'
+					loading='eager'
 					sizes='100vw'
 					className='object-cover'
 				/>
