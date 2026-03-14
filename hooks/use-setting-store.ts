@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 
 import { defaultSetting } from '@/lib/fallback-data'
 import { ClientSetting, SiteCurrency } from '@/types'

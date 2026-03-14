@@ -1,203 +1,124 @@
 # 🛍️ Caeser Store
 
-A full-featured e-commerce platform built with Next.js 15 and MongoDB, inspired by Amazon's shopping experience. Browse products, manage inventory, process payments, and keep customers informed—all in one modern web application.
+A modern full-featured e-commerce platform built with **Next.js 15**, **MongoDB**, and **TypeScript**, inspired by Amazon’s shopping experience. Customers can browse products, place orders, and pay securely, while admins can manage inventory, users, content, and store settings from a dedicated dashboard.
 
-**Live:** [caeser-store.vercel.app](https://caeser-store.vercel.app/)
+**Live Demo:** [caeser-store.vercel.app](https://caeser-store.vercel.app/)
 
 |                  Store                   |                  Admin                   |
 | :--------------------------------------: | :--------------------------------------: |
 | ![Store screen](assets/store-screen.png) | ![Admin screen](assets/admin-screen.png) |
 
-- **Product catalog** — Categories including Shirts, Jeans, Shoes, Wrist Watches, Sunglasses, and Cufflinks
-- **Search & filters** — Find products by name, category, tag, price range, and rating
-- **Product details** — Images, reviews, ratings, sizes, colors, and stock availability
-- **Shopping cart** — Add items, adjust quantities, and choose delivery options
-- **Browsing history** — Track recently viewed products and related recommendations
+## Features
 
-### Payments
+- **Product catalogue** — Browse categories including Shirts, Jeans, Shoes, Wrist Watches, Sunglasses, and Cufflinks
+- **Search and filters** — Find products by name, category, tag, price range, and rating
+- **Product details** — View images, reviews, ratings, sizes, colours, and stock availability
+- **Shopping cart** — Add items, update quantities, and choose delivery options
+- **Browsing history** — See recently viewed products and related recommendations
 
-- **Stripe** — Credit and debit card payments with secure checkout
-- **PayPal** — One-click PayPal checkout
+## Payments
+
+- **Stripe** — Secure credit and debit card payments
+- **PayPal** — Fast PayPal checkout
 - **Cash on Delivery** — Pay when your order arrives
 
-### Internationalization
+## Internationalisation
 
-- **Multi-language** — English (en-GB), Arabic (ar), and French (fr) with RTL support
-- **Multi-currency** — GBP, USD, EUR, AED with configurable conversion rates
+- **Multi-language** — English (en-GB), Arabic (ar), French (fr), German (de-DE), Italian (it-IT), Spanish (es-ES), and Portuguese (pt-PT), with RTL support
+- **Multi-currency** — GBP, USD, EUR, and AED with configurable conversion rates
 
-### Inventory & Stock
+## Inventory and Stock
 
-- **Real-time stock tracking** — Product quantities update automatically when orders are placed
-- **Low-stock awareness** — `countInStock` prevents overselling and keeps inventory accurate
-- **Admin product management** — Create, edit, and manage products with full control over stock levels
+- **Real-time stock tracking** — Quantities update automatically when orders are placed
+- **Low-stock protection** — `countInStock` helps prevent overselling
+- **Admin product management** — Create, edit, and manage products with full control over pricing and stock levels
 
-### Email Notifications
+## Email Notifications
 
-- **Purchase receipt** — Customers receive an order confirmation email after payment
-- **Review reminders** — Customers get a follow-up email (scheduled 1 day after delivery) to review their purchases
-- **Resend** — Professional transactional emails powered by Resend
+- **Order confirmation** — Customers receive a purchase receipt after payment
+- **Review reminders** — Follow-up emails are scheduled 1 day after delivery
+- **Resend integration** — Transactional emails powered by Resend and React Email
 
-### Admin Dashboard
+## Admin Dashboard
 
-- **Orders** — View, track, and manage all customer orders
-- **Products** — Add products, upload images (UploadThing), set prices, and manage stock
-- **Users** — Manage user accounts and roles (Admin/User)
-- **Settings** — Configure site info, carousels, languages, currencies, payment methods, and delivery options
-- **Analytics** — Sales overview with charts (Recharts)
-- **Web pages** — Manage About, Contact, and Help content
+- **Orders** — View, track, and manage customer orders
+- **Products** — Add products, upload images with UploadThing, set prices, and manage stock
+- **Users** — Manage accounts and roles (Admin/User)
+- **Settings** — Configure site details, carousels, languages, currencies, payment methods, and delivery options
+- **Analytics** — View sales insights with charts powered by Recharts
+- **Pages** — Manage About, Contact, and Help content
 
-### Authentication
+## Authentication
 
 - **Auth.js** — Sign in with credentials, Google OAuth, or Magic Link
-- **Role-based access** — Admin and User roles with protected routes
+- **Role-based access control** — Protected routes for Admin and User roles
 
-### ▶️ Try the Demo (Test Accounts)
+## ▶️ Try the Demo
 
-> ℹ️ All accounts use **test mode** — no real payments are processed. Demo data resets nightly.
+> ℹ️ All accounts run in **test mode**. No real payments are processed, and demo data may be reset periodically.
 
 | Role        | Email               | Password     |
 | ----------- | ------------------- | ------------ |
 | 👤 Customer | `user@example.com`  | `User@1234`  |
 | 👨‍💼 Admin    | `admin@example.com` | `Admin@1234` |
 
-#### Quick Start:
+### Quick start
 
-- **As a customer**: Log in with credentials above or sign up instantly using **Google OAuth**
-- **As admin**: Log in → visit `/admin` to access the dashboard (inventory, orders, analytics)
+- **Customer** — Sign in with the demo account above or use **Google OAuth**
+- **Admin** — Sign in and visit `/admin` to access the dashboard
 
-### 💳 Test Payment Options
+## 💳 Test Payment Options
 
-#### **Option 1: Stripe Credit Card** (Direct Entry)
+### Option 1: Stripe Credit Card
 
-| Field               | Value                             |
-| ------------------- | --------------------------------- |
-| **Card Number**     | `4111 1111 1111 1111`             |
-| **Expiry Date**     | Any future date (e.g., `12 / 30`) |
-| **CVC**             | Any 3 digits (e.g., `123`)        |
-| **ZIP/Postal Code** | `SW1A 1AA`                        |
+| Field               | Value                                   |
+| ------------------- | --------------------------------------- |
+| **Card Number**     | `4111 1111 1111 1111`                   |
+| **Expiry Date**     | Any future date (for example `12 / 30`) |
+| **CVC**             | Any 3 digits (for example `123`)        |
+| **ZIP/Postal Code** | `SW1A 1AA`                              |
 
-#### **Option 2: PayPal** (Sandbox Login Required)
+### Option 2: PayPal Sandbox
 
-1. At checkout, click **"Pay with PayPal"**
-2. Log in with Sandbox credentials:
-   - **Email**: `buyer+uk@personal.example.com`
-   - **Password**: `PayPal@Demo123` _(see security note below)_
-3. On PayPal's payment screen, select:
-   - ✅ **PayPal balance** (£10,000 available), OR
-   - ✅ **Saved test card**: Visa ending in `9695` (expires 03/2031)
-4. Click **"Pay Now"** → You'll return to order confirmation
+1. At checkout, click **Pay with PayPal**
+2. Sign in with the sandbox account:
+   - **Email:** `buyer+uk@personal.example.com`
+   - **Password:** `PayPal@Demo123`
+3. On the PayPal screen, choose either:
+   - **PayPal balance** (£10,000 available), or
+   - **Saved test card** ending in `9695` (expires `03/2031`)
+4. Click **Pay Now** to complete the order
 
-> 🔒 All transactions occur in PayPal's sandbox environment. No real money is charged or transferred.
+> 🔒 All PayPal transactions run inside the sandbox environment. No real money is charged or transferred.
 
 ---
 
-### 🔒 Security Transparency
+## 🔒 Security Transparency
 
-> _Demo credentials and payment details are published here for recruiter convenience. In production deployments:_
->
-> - ✅ Credentials would be environment-specific (`.env`)
-> - ✅ Admin routes would require RBAC + session validation
-> - ✅ Passwords would enforce complexity rules
-> - ✅ Payment processing would use live API keys (never committed to Git)
-> - ✅ Seed scripts would run only in development environments
+> Demo credentials and test payment details are included for recruiter and reviewer convenience. In a production deployment:
 
-_This demo uses isolated test data with no connection to real payment systems or customer information._
+- Credentials would be environment-specific
+- Admin routes would require full RBAC and session validation
+- Passwords would enforce stronger security policies
+- Payment processing would use live API keys stored securely in environment variables
+- Seed scripts would only run in development environments
+
+This demo uses isolated test data and is not connected to any live customer or payment information.
 
 ## Tech Stack
 
 | Layer       | Technology                        |
 | ----------- | --------------------------------- |
 | Framework   | Next.js 15, React 19              |
+| Language    | TypeScript                        |
 | UI          | Tailwind CSS, shadcn/ui, Recharts |
 | Database    | MongoDB, Mongoose                 |
 | Payments    | Stripe, PayPal                    |
 | Email       | Resend, React Email               |
 | Auth        | Auth.js (NextAuth v5)             |
-| File upload | UploadThing                       |
+| File Upload | UploadThing                       |
 | Deployment  | Vercel, GitHub                    |
 
-## Getting Started
+### LICENSE
 
-### Prerequisites
-
-- Node.js 18+
-- MongoDB (local or Atlas)
-- Stripe account
-- PayPal developer account
-- Resend account (for emails)
-- UploadThing account (for product images)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone <repository-url>
-cd caeser-clothing-store
-
-# Install dependencies
-pnpm install
-
-# Copy environment variables
-cp .env.example .env
-
-# Seed the database (optional)
-pnpm run seed
-
-# Start development server
-pnpm dev
-```
-
-### Environment Variables
-
-Create a `.env` file with:
-
-```
-MONGODB_URI=          # MongoDB connection string
-NEXTAUTH_SECRET=      # Auth.js secret
-NEXTAUTH_URL=         # App URL (e.g. http://localhost:3000)
-STRIPE_SECRET_KEY=    # Stripe secret key
-STRIPE_WEBHOOK_SECRET=# Stripe webhook signing secret
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
-PAYPAL_CLIENT_ID=     # PayPal client ID
-PAYPAL_CLIENT_SECRET= # PayPal client secret
-RESEND_API_KEY=       # Resend API key for emails
-UPLOADTHING_TOKEN=    # UploadThing token for file uploads
-```
-
-### Default Admin
-
-- **Email:** admin@example.com
-- **Password:** 123456
-
-## Project Structure
-
-```
-app/
-├── [locale]/           # Internationalized routes
-│   ├── (home)/         # Home page
-│   ├── (root)/         # Main app (search, cart, account, product)
-│   ├── admin/          # Admin dashboard
-│   ├── checkout/       # Checkout flow
-│   └── (auth)/         # Sign in, sign up
-lib/
-├── actions/            # Server actions (orders, products, settings)
-├── db/                 # MongoDB models and connection
-├── paypal/             # PayPal integration
-└── validator/          # Zod schemas
-emails/                 # React Email templates
-components/             # Shared UI components
-```
-
-## Scripts
-
-| Command      | Description                    |
-| ------------ | ------------------------------ |
-| `pnpm dev`   | Start development server       |
-| `pnpm build` | Build for production           |
-| `pnpm start` | Start production server        |
-| `pnpm seed`  | Seed database with sample data |
-| `pnpm lint`  | Run ESLint                     |
-
-## License
-
-This project is licensed under the MIT License – see the LICENSE file for details.
+- This project is licensed under the MIT License – see the LICENSE file for details.
