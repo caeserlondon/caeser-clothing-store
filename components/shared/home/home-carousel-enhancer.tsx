@@ -66,17 +66,16 @@ export default function HomeCarouselEnhancer({ items }: { items: Carousel[] }) {
 				onMouseLeave={autoplay.current.reset}
 			>
 				<CarouselContent className='h-full'>
-					{items.map((item, index) => (
+					{items.map((item) => (
 						<CarouselItem key={item.title} className='h-full'>
 							<div className='relative flex aspect-[16/6] items-center overflow-hidden'>
 								<Image
 									src={item.image}
 									alt={t(item.title)}
 									fill
-									priority={index === 0}
-									fetchPriority={index === 0 ? 'high' : 'auto'}
-									loading={index === 0 ? 'eager' : 'lazy'}
-									sizes='(max-width: 1400px) 100vw, 1400px'
+									sizes='100vw'
+									loading='lazy'
+									fetchPriority='low'
 									className='object-cover'
 								/>
 

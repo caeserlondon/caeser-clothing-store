@@ -13,23 +13,59 @@ import { getSetting } from '@/lib/actions/setting.actions'
 import { CATEGORY_IMAGES } from '@/lib/constants'
 import { toSlug } from '@/lib/utils'
 import { getTranslations } from 'next-intl/server'
+import { unstable_cache } from 'next/cache'
+
+const getHomePageData = unstable_cache(
+	async () => {
+		const [
+			setting,
+			todaysDeals,
+			bestSellingProducts,
+			allCategories,
+			newArrivals,
+			featureds,
+			bestSellers,
+		] = await Promise.all([
+			getSetting(),
+			getProductsByTag({ tag: 'todays-deal' }),
+			getProductsByTag({ tag: 'best-seller' }),
+			getAllCategories(),
+			getProductsForCard({ tag: 'new-arrival' }),
+			getProductsForCard({ tag: 'featured' }),
+			getProductsForCard({ tag: 'best-seller' }),
+		])
+
+		return {
+			setting,
+			todaysDeals,
+			bestSellingProducts,
+			allCategories,
+			newArrivals,
+			featureds,
+			bestSellers,
+		}
+	},
+	['home-page-data'],
+	{
+		revalidate: 300,
+	},
+)
 
 export default async function HomePage() {
 	const t = await getTranslations('Home')
-	const { carousels } = await getSetting()
-	const todaysDeals = await getProductsByTag({ tag: 'todays-deal' })
-	const bestSellingProducts = await getProductsByTag({ tag: 'best-seller' })
 
-	const categories = (await getAllCategories()).slice(0, 4)
-	const newArrivals = await getProductsForCard({
-		tag: 'new-arrival',
-	})
-	const featureds = await getProductsForCard({
-		tag: 'featured',
-	})
-	const bestSellers = await getProductsForCard({
-		tag: 'best-seller',
-	})
+	const {
+		setting,
+		todaysDeals,
+		bestSellingProducts,
+		allCategories,
+		newArrivals,
+		featureds,
+		bestSellers,
+	} = await getHomePageData()
+
+	const { carousels } = setting
+	const categories = allCategories.slice(0, 4)
 
 	const cards = [
 		{
@@ -73,15 +109,18 @@ export default async function HomePage() {
 	return (
 		<>
 			<HomeCarousel items={carousels} />
-			<div className='md:p-4 md:space-y-4 bg-border'>
+
+			<div className='bg-border md:space-y-4 md:p-4'>
 				<HomeCard cards={cards} />
+
 				<Card className='w-full rounded-none'>
-					<CardContent className='p-4 items-center gap-3'>
+					<CardContent className='items-center gap-3 p-4'>
 						<ProductSlider title={t("Today's Deals")} products={todaysDeals} />
 					</CardContent>
 				</Card>
+
 				<Card className='w-full rounded-none'>
-					<CardContent className='p-4 items-center gap-3'>
+					<CardContent className='items-center gap-3 p-4'>
 						<ProductSlider
 							title={t('Best Selling Products')}
 							products={bestSellingProducts}
@@ -91,7 +130,7 @@ export default async function HomePage() {
 				</Card>
 			</div>
 
-			<div className='p-4 bg-background'>
+			<div className='bg-background p-4'>
 				<BrowsingHistoryList />
 			</div>
 		</>

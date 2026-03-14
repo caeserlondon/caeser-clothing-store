@@ -1,7 +1,7 @@
-import { Drawer } from '@/components/ui/drawer'
 import { auth } from '@/auth'
-import { getLocale } from 'next-intl/server'
+import { Drawer } from '@/components/ui/drawer'
 import { getDirection } from '@/i18n-config'
+import { getLocale } from 'next-intl/server'
 import { SidebarContent } from './sidebar-content'
 
 export default async function Sidebar({
@@ -15,11 +15,7 @@ export default async function Sidebar({
 
   return (
     <Drawer direction={direction} modal={false}>
-      <SidebarContent
-        categories={categories}
-        session={session}
-        direction={direction}
-      />
+      <SidebarContent categories={categories} session={session} />
     </Drawer>
   )
 }

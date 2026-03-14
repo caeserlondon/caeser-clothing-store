@@ -26,8 +26,7 @@ export async function HomeCarousel({ items }: { items: Carousel[] }) {
 					fill
 					priority
 					fetchPriority='high'
-					loading='eager'
-					sizes='(max-width: 1400px) 100vw, 1400px'
+					sizes='100vw'
 					className='object-cover'
 				/>
 
